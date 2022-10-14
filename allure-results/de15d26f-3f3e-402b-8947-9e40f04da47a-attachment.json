@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div[class='featured button action-play primary puzzleInfo js-hub-tracker'] div[class='cardRibbon']"
+}

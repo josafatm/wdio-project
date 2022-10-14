@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "li[class='xwd__tool--button xwd__tool--texty xwd__tool--open'] li:nth-child(2) button:nth-child(1)"
+}

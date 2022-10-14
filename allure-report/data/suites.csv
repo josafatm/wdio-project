@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri Sep 30 11:43:14 EDT 2022","Fri Sep 30 11:43:22 EDT 2022","8951","","Proof of concept Demo","","Proof of concept Demo","Make Two Changes In Puzzle settings","Make Two Changes In Puzzle settings",""
+"passed","Fri Sep 30 11:43:09 EDT 2022","Fri Sep 30 11:43:14 EDT 2022","4424","","Proof of concept Demo","","Proof of concept Demo","NYT-Games Login ","NYT-Games Login ",""
+"passed","Fri Sep 30 11:43:26 EDT 2022","Fri Sep 30 11:43:28 EDT 2022","2049","","Proof of concept Demo","","Proof of concept Demo","Revealing Daily Puzzle","Revealing Daily Puzzle",""
+"passed","Fri Sep 30 11:43:22 EDT 2022","Fri Sep 30 11:43:26 EDT 2022","3871","","Proof of concept Demo","","Proof of concept Demo","Reveal Mini Puzzle","Reveal Mini Puzzle",""
+"passed","Fri Sep 30 11:43:28 EDT 2022","Fri Sep 30 11:43:50 EDT 2022","21115","","Proof of concept Demo","","Proof of concept Demo","Verifify Each Games In Nav Menu","Verifify Each Games In Nav Menu",""
