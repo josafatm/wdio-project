@@ -2,9 +2,19 @@ const Page = require('./page')
 const nav = require('./nav.page')
 
 class user {
-    
-    async delCookie() { await browser.deleteCookies('NYT-S'); }
 
+    get usernameInputBox(){return $("#email")}
+    get passwordInputBox(){return $("#password")}
+    get continueBtn(){return $("[data-testid='submit-email']")}
+    get signinBtn(){return $("[data-testid='login-button']")}
+    get registerBtn(){return $("[data-testid='register-button']")}
+    /**
+     * To delete cookie
+     */
+    async delCookie() { await browser.deleteCookies('NYT-S'); }
+    /**
+     * To set cookie
+     */
     async setCookie() {
         await browser.setCookies({
             domain: '.nytimes.com',
@@ -16,21 +26,63 @@ class user {
         })
         await Page.open("/");
     }
-
+    /**
+     * To login with cookiee
+     */
     async login() {
         await Page.open("/");
         await this.clickLoginBtn()
         await this.delCookie();
         await this.setCookie();
     } 
-
-    get usernameInputBox(){return $("#email")}
-    get passwordInputBox(){return $("#password")}
-    get continueBtn(){return $("[data-testid='submit-email']")}
-    get signinBtn(){return $("[data-testid='login-button']")}
-    get registerBtn(){return $("[data-testid='register-button']")}
-
-    /*Login user*/
+    /**
+     * To set the username
+     * @param {*} username 
+     */
+    async setUsername(username){
+        await this.usernameInputBox.waitForDisplayed()
+        await this.usernameInputBox.setValue(username)
+        await this.continueBtn.click()
+    }
+    /**
+     * To set the password
+     * @param {*} password 
+     */
+    async setPassword(password){
+        await this.usernameInputBox.waitForDisplayed()
+        await this.passwordInputBox.setValue(password)
+    }
+    /**
+     * To set the credentials
+     * @param {*} username 
+     * @param {*} password 
+     */
+    async setusernameAndPassword(username,password){
+        await this.usernameInputBox.waitForDisplayed()
+        await this.setUsername(username)
+        await this.setPassword(password)
+        await this.signinBtn.click()
+        await browser.pause(1000)
+    }
+    /**
+     * To login with username and password
+     * @param {*} username 
+     * @param {*} password 
+     */
+    async loginUser(username, password) {
+        await Page.open('/');
+        await this.clickLoginBtn()
+        browser.pause(2000)
+        if((await browser.getUrl()).includes("stg")){
+            await browser.url("https://myaccount.nytimes.com/")
+        }
+        await this.setusernameAndPassword(username,password);
+    }
+    /**
+     * To login with username and password
+     * @param {*} username 
+     * @param {*} password 
+     */
     async loginUser(username, password) {
         await Page.open('/');
         await this.clickLoginBtn()
@@ -40,36 +92,31 @@ class user {
         }
         await this.setusernameAndPassword(username,password);
     }
-
-    async setUsername(username){
-        await this.usernameInputBox.waitForDisplayed()
-        await this.usernameInputBox.setValue(username)
-        await this.continueBtn.click()
+    /**
+     * log in with an account
+     */
+    async loginWithAccount() {
+        this.loginUser("josafat.melendez@nytimes.com","K5sFqn-eKZFA}Pv?.")
     }
-    async setPassword(password){
-        await this.usernameInputBox.waitForDisplayed()
-        await this.passwordInputBox.setValue(password)
-    }
-
-    async setusernameAndPassword(username,password){
-        await this.usernameInputBox.waitForDisplayed()
-        await this.setUsername(username)
-        await this.setPassword(password)
-        await this.signinBtn.click()
-        await browser.pause(1000)
-    }
-
+    /**
+     * To click the login button
+     */
     async clickLoginBtn(){
         await nav.loginBtn.waitForDisplayed();
         await nav.loginBtn.click();
     }
-
-    /*Creating account*/
+    /**
+     * To click register account button
+     */
     async createAccountBtn(){
         await this.registerBtn.waitForDisplayed();
         await this.registerBtn.click();
     }
-
+    /**
+     * to create a new account with credentials 
+     * @param {*} username 
+     * @param {*} password 
+     */
     async createNewAccount(username,password){
         await this.usernameInputBox.waitForDisplayed()
         await this.setUsername(username)
@@ -78,7 +125,11 @@ class user {
         await this.registerBtn.click()
         await browser.pause(1000)
     }
-
+    /**
+     * to create a new user 
+     * @param {*} username 
+     * @param {*} password 
+     */
     async createUser(username, password) {
         await Page.open('/');
         await this.clickLoginBtn()

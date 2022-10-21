@@ -11,7 +11,7 @@
         "@wdio/selenium-standalone-service": "^7.25.0",
         "@wdio/spec-reporter": "^7.20.8",
         "chromedriver": "^105.0.0",
-        "geckodriver": "^3.0.2",
+        "geckodriver": "^3.2.0",
         "wdio-chromedriver-service": "^7.3.2",
         "wdio-geckodriver-service": "^3.0.6"
     },

@@ -6,5 +6,4 @@ class statsPage {
     get currentStreak() { return $("div:nth-child(3) > p:nth-child(3)") }
     get longestStreak() { return $("div:nth-child(4) > p:nth-child(3)") }   
 }
-
 module.exports = new statsPage();

@@ -1,30 +1,30 @@
 const game = require('../pageobjects/game.page')
 
 class nav {
-    
-    /*nav buttons */
     get loginBtn() { return $("div[id='js-nav-actions'] a[class='pz-nav__button white js-nav-login']") }
     get hamburgerBtn() { return $(".pz-nav__hamburger-box") }
-
-    /* nav games*/
     get leaderboards() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/leaderboards']") }
     get archive() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/crosswords/archive']") }
     get stats() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/stats']") }
-
-    /*group of nav items*/
     get allGames() { return $$("[data-testid] a:first-child") }
     get allNavItems() { return $$("a[class='js-nav-tracker pz-nav-drawer__link']") }
-
+    /**
+     * to click the Hamburger
+     */
     async clickHamburgerBtn(){
         await this.hamburgerBtn.waitForClickable()
         await this.hamburgerBtn.click()
     }
+    /**
+     * to click leaderboards
+     */
     async clickLeaderboards(){
         await this.leaderboards.waitForClickable()
         await this.leaderboards.click()
     }
-
-    /*Games in nav*/
+    /**
+     * to click every game in the nav
+     */
     async clickGamesinNav() {
         const navGames = await this.allGames;
         await browser.pause(1000)
@@ -41,8 +41,9 @@ class nav {
         await this.hamburgerBtn.click()
         }
     }
-    
-    /* All items in the nav*/
+    /**
+    * to hover over all items
+    */
     async hoverAllItemsInNav() {
         const navList = await this.allNavItems;
         for (const elem of navList) {
@@ -51,5 +52,4 @@ class nav {
         }
     }
 }
-
 module.exports = new nav();
