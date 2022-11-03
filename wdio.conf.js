@@ -26,7 +26,8 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js'
-        './test/specs/thirdAssigment/*.js'
+        './test/specs/assignment5/sbRanking.js'
+        
     ],
     // Patterns to exclude.
     exclude: [

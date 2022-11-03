@@ -10,6 +10,22 @@ class archivePage {
     get monthDropdown() { return $$("select[label='month'] option") }
     get yearDropdown() { return $$("select[label='year'] option") }
     get previousYear() { return $("select[label='year'] option:nth-child(2)") }
+    get calendarHeader() { return $(".archive_calendar-header") }
+
+    get gameView() { return $("div:nth-child(1) > div:nth-child(3) > div:nth-child(2)") }
+
+    get listViewEnabled() { return $("div[class='archive_list-view']") }
+
+
+
+    get printTool() { return $$("div[class='printTool']") }
+
+
+    get bonusBtn() { return $(".tab__tab[href='/crosswords/archive/bonus'] span") }
+    get acrosticBtn() { return $(".tab__tab[href='/crosswords/archive/acrostic']") }
+    get varietyBtn() { return $(".tab__tab[href='/crosswords/archive/variety']") }
+
+
     /**
      * To get a different month other than the current one
      * @param {*} currentMonth 

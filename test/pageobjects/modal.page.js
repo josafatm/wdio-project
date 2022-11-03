@@ -23,6 +23,22 @@ class modal  {
      /*Reset Timer*/
      get resetTimerBtn() { return $("button[aria-label='Reset timer']") }
      get neverMindBtn() { return $(" button[aria-label='Never mind']") }     
+
+     get continueBtn() { return $("button[aria-label='Continue']") }     
+
+     //printer modal
+     get newspaperRadioBtn() { return $("#newspaper") }  
+     get print() { return $("button[class='hub-print-modal__button pz-modal__button dark']") } 
+     get printClosenBtn() { return $("div[class='pzm-modal-ex']") }  
+
+     
+  
+
+     
+     
+
+
+     
     /**
      * to click the modal play button
      */

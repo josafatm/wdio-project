@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": " div[class='xwd__layout_container'] div div:nth-child(1) h3"
-}

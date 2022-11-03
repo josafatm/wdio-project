@@ -26,6 +26,28 @@ class hubPage {
      get blueStarInSevenDays() { return $("div[class='expandToRow'] div[class='progressIconContent puzzleProgressBlueStar']") }
      get resumeBannerInSevenDays() { return $("div[class='expandToRow'] div[class='progressIconContent puzzleProgress1']") }
      get sevenDayBanner() { return $("div:nth-child(2) >div> div:nth-child(2) > div> div:nth-child(1> a > div > div:nth-child(2) > div:nth-child(2)") }
+
+
+
+
+
+
+
+     get dailyPrinterBtn() { return $("div[class='featured button action-play primary puzzleInfo js-hub-tracker'] a[class='hub-print-link']") }
+     get lastsevenPrinters() { return $$(".tab_tabBody div a div h3") }
+
+     get monthlyPrinter() { return $$("div[class='hideOn phone smallDevice'] section div div[class='print']") }
+
+
+     
+
+     get inProgressBtn() { return $("div[class='pz-content'] button:nth-child(2) span") }
+
+     
+
+
+     //
+
     /**
      * To go through and hover top six games
      */
@@ -46,5 +68,32 @@ class hubPage {
             await elem.moveTo()
         }
     }
+
+
+
+
+
+
+    async allSevenPrinters() {
+        const printers = await this.lastSevenDays;
+        for (const print of printers) {
+            let i=1;
+            await print.waitForClickable()
+            await expect(print).toBeClickable()
+            await expect($(`div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(${i}) > div:nth-child(2)`)).toExist()
+            i++
+            await print.moveTo()  
+        }
+}
+
+
+
+
+
+
+
+
+
+
 }
 module.exports = new hubPage();

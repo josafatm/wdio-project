@@ -8,6 +8,11 @@ class nav {
     get stats() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/stats']") }
     get allGames() { return $$("[data-testid] a:first-child") }
     get allNavItems() { return $$("a[class='js-nav-tracker pz-nav-drawer__link']") }
+    get letterBoxed() { return $("div[data-testid='letter-boxed']") }
+    get spellingBee() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/spelling-bee']") }
+
+
+    
     /**
      * to click the Hamburger
      */

@@ -11,6 +11,10 @@ class toolBar  {
     get checkBtn() { return $("button[aria-label='check']") }
     get enabledAutocheck() { return $("button[aria-label='autocheck']") }
     get resetBtn() { return $("button[aria-label='Reset']") }
+    get pauseBtn() { return $(".pz-icon.pz-icon-pause") }
+
+
+    
 
     /*CHECK dropdown*/
     get autoCheck() { return $("li[class='xwd__tool--button xwd__tool--texty xwd__tool--open'] li:nth-child(1)") }

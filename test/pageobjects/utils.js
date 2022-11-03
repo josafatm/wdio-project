@@ -48,5 +48,16 @@ class utils {
         await browser.keys("ArrowRight")
         await browser.keys("ArrowRight")
     }
+
+    async waitForAnimation() {
+        await browser.pause(2000)
+        await browser.keys("Enter")
+        await browser.pause(2000)
+    }
+
+
+
+
+
 }
 module.exports = new utils();
