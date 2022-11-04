@@ -20,6 +20,14 @@ class archivePage {
 
     get printTool() { return $$("div[class='printTool']") }
 
+    get archiveDropdown() { return $(".archive_dropdown") }
+    get year2021() { return $("option[value='2021']") }
+
+
+    
+
+
+    
 
     get bonusBtn() { return $(".tab__tab[href='/crosswords/archive/bonus'] span") }
     get acrosticBtn() { return $(".tab__tab[href='/crosswords/archive/acrostic']") }

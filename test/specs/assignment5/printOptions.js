@@ -6,7 +6,6 @@ const chai = require('chai');
 const modal = require('../../pageobjects/modal.page');
 const chaiExpect = chai.expect;
 
-
 describe('Verify All Print Buttons', async () => {
 
     before(async () => {
@@ -45,25 +44,33 @@ describe('Verify All Print Buttons', async () => {
         //Daily
         await browser.pause(1000)
         const dailyCount = await archive.printTool.length
-        chaiExpect(await dailyCount).to.equal(2)  
+        chaiExpect(await dailyCount).to.equal(day)  
+    })
+            
+    it('verify Bonus Tab', async () => {
+      await archive.bonusBtn.click()
+      await browser.pause(1000)
+      const bonusCount = await archive.printTool.length
+      chaiExpect(await bonusCount).to.equal(11)  
+    })
 
-        //Bonus
-        await archive.bonusBtn.click()
-        await browser.pause(1000)
-        const bonusCount = await archive.printTool.length
-        chaiExpect(await bonusCount).to.equal(11)  
-
-        // //Acrostic
+    it('verify Acrostic Tab', async () => {
         await archive.acrosticBtn.click()
         await browser.pause(1000)
+        await archive.archiveDropdown.click()
+        await archive.year2021.click()
+        await browser.pause(1000)
         const acrosticCount = await archive.printTool.length
-        chaiExpect(await acrosticCount).to.equal(22)  
+        chaiExpect(await acrosticCount).to.equal(26)   
+      })
 
-        // //Variety
+      it('verify Variety Tab', async () => {
         await archive.varietyBtn.click()
         await browser.pause(1000)
+        await archive.archiveDropdown.click()
+        await archive.year2021.click()
+        await browser.pause(1000)
         const varietyCount = await archive.printTool.length
-        chaiExpect(await varietyCount).to.equal(66)  
-
-    })
+        chaiExpect(await varietyCount).to.equal(78)    
+      })
 })

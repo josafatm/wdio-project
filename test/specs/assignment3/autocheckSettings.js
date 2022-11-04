@@ -27,5 +27,6 @@ describe('Autocheck settings persists when user reopens the puzzle', async () =>
         await page.open("/game/daily")
         await modal.clickModalPlayBtn()
         await expect(toolbar.enabledAutocheck).toBeDisplayed()
+        await $(`//li[@class='xwd__tool--button xwd__tool--texty xwd__tool--open']//button[@type='button'][normalize-space()='Autocheck']`).click()
     })
 })

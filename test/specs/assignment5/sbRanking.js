@@ -5,7 +5,7 @@ const user = require('../../pageobjects/login.page');
 const chai = require('chai')
 const chaiExpect = chai.expect;
 
-describe('SB Ranking', async () => {
+describe('Confirming Queen Bee Ranking', async () => {
     before(async () => {
         await user.login()
         await page.open("")
@@ -19,7 +19,7 @@ describe('SB Ranking', async () => {
         await expect(browser).toHaveUrlContaining("spelling-bee")
     })
 
-    it('go to spelling bee', async () => {
+    it('reset and get a ranking ', async () => {
         await browser.pause(1000)
         await spellingBee.playBtn.click()
         await browser.pause(1000)
@@ -27,31 +27,17 @@ describe('SB Ranking', async () => {
         if(await spellingBee.title.isDisplayed()){
             await spellingBee.closeBtn.click()
         }
-        await browser.pause(1000)
-        await spellingBee.resetBoard()
-
-        await spellingBee.getRanking()
-        
-        await browser.pause(2000)
+        await spellingBee.resetAndGetRanking() 
         await spellingBee.closeBtn.click()
-
-        await browser.pause(1000)
-        await spellingBee.moreBtn.click()
-        await browser.pause(1000)
-        await spellingBee.rankingsBtn.click()
-        await browser.pause(1000)
+        await spellingBee.clickRankingBtn()
 
         const ranks = await spellingBee.rankings.length
         chaiExpect(await ranks).to.equal(9)  
-
         await spellingBee.rankingCloseBtn.click()
         await browser.pause(1000)
-
-
-
     })
 
-    it('go to spelling bee', async () => {
+    it('get Queen Bee Ranking', async () => {
         await browser.pause(1000)
         await browser.keys("Enter")
         await browser.pause(2000)

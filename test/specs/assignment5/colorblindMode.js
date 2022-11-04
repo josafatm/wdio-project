@@ -1,9 +1,8 @@
 const game = require('../../pageobjects/game.page');
 const user = require('../../pageobjects/login.page');
-const archive  = require('../../pageobjects/archive.page');
 const util  = require('../../pageobjects/utils');
 
-describe('verify color blind mode', async () => {
+describe('Color blind mode in wordle', async () => {
     before(async () => {
         await user.login()
         await browser.url("https://www.nytimes.com/games/wordle/index.html")

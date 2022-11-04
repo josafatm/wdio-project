@@ -4,7 +4,7 @@ const game = require('../../pageobjects/game.page');
 const modal = require('../../pageobjects/modal.page');
 
 
-describe('Archive: sort Functionality', async () => {
+describe('Wordplay Section', async () => {
 
     before(async () => {
         await user.login()
@@ -12,11 +12,11 @@ describe('Archive: sort Functionality', async () => {
         await expect(browser).toHaveUrlContaining('daily')
     });
     
-    it('verify wordplay container', async () => {
+    it('verify the wordplay sectio links', async () => {
         await modal.clickModalPlayBtn()
         await game.wordPlay.isDisplayed()
         await game.wordPlay.scrollIntoView()
-        
+
         const containers = await game.wordPlayHeadings;
         for (const container of containers) {
             await container.waitForClickable()
@@ -24,5 +24,4 @@ describe('Archive: sort Functionality', async () => {
             await container.moveTo()     
         }
     })
-
 })

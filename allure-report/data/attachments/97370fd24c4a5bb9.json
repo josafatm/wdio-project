@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div[class='tab_tabBody'] div[class='thumb action-play standard puzzleInfo js-hub-tracker']"
+}

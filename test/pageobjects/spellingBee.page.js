@@ -5,23 +5,7 @@ class spellingBeePage {
     get queenBeeBtn() { return $("div[class='pz-moment__button-wrapper slide-up'] button[type='button']") }
     get closeBtn() { return $("button[aria-label='Close']") }
 
-
-    get moreBtn() { return $("button[type='button'] span[class='pz-dropdown__label']") }
-    get rankingsBtn() { return $("li:nth-child(2) button:nth-child(1)") }
-
-    get rankings() { return $$("div[id='portal-game-modals'] li span") }
-
-    get rankingCloseBtn() { return $("div[class='sb-modal-close']") }
-
-
-    
-    
-
-    
-
-
-
-
+    //spelling Bee Hive Buttons
     get keyCell() { return $(".hive-cell:nth-of-type(1)") }
     get northwestCell() { return $(".hive-cell:nth-of-type(2)") }
     get northCell() { return $(".hive-cell:nth-of-type(3)") }
@@ -32,7 +16,10 @@ class spellingBeePage {
     get inputField() { return $(".sb-hive-input-content") }
     get inputCursor() { return $(".sb-hive-input-content") }
 
-
+    get moreBtn() { return $("button[type='button'] span[class='pz-dropdown__label']") }
+    get rankingsBtn() { return $("li:nth-child(2) button:nth-child(1)") }
+    get rankings() { return $$("div[id='portal-game-modals'] li span") }
+    get rankingCloseBtn() { return $("div[class='sb-modal-close']") }
 
     async resetBoard(){
         await browser.pause(500)
@@ -65,20 +52,20 @@ class spellingBeePage {
         await browser.pause(1000)
         await browser.keys("Enter")
     }
- 
 
-    async verifyOptions(){
-        const numberOfOptions = []
-        const allOptions = await this.rankings;
-        for (const elem of allOptions) {
-            await elem.waitForClickable()
-            numberOfOptions.push(elem)
-            await elem.moveTo()
-        }
-        return numberOfOptions.length
+    async resetAndGetRanking(){
+        await browser.pause(1000)
+        await this.resetBoard()
+        await this.getRanking()
+        await browser.pause(2000)
     }
 
-
-
+    async clickRankingBtn(){
+        await browser.pause(1000)
+        await this.moreBtn.click()
+        await browser.pause(1000)
+        await this.rankingsBtn.click()
+        await browser.pause(1000)
+    }
 }
 module.exports = new spellingBeePage();

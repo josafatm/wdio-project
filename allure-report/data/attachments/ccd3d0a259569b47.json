@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "button[class='hub-print-modal__button pz-modal__button dark']"
+}

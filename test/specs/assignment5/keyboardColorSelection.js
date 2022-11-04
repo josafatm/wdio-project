@@ -1,11 +1,8 @@
 const game = require('../../pageobjects/game.page');
 const user = require('../../pageobjects/login.page');
-const archive  = require('../../pageobjects/archive.page');
-const util  = require('../../pageobjects/utils');
 const axios = require('axios')
 
-
-describe('keyword selection', async () => {
+describe('wordle keyboard color', async () => {
     let solution = ''
     before(async () => {
         await user.login()
@@ -39,12 +36,5 @@ describe('keyword selection', async () => {
         for (let i = 0; i < solution.length; i += 1) {
             await expect($(`button[data-key=${solution[i]}]`)).toHaveAttributeContaining('data-state', 'correct')
           }
-
     })
-
-
-
-
-
-
 })
