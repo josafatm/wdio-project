@@ -12,7 +12,7 @@ describe('Wordplay Section', async () => {
         await expect(browser).toHaveUrlContaining('daily')
     });
     
-    it('verify the wordplay sectio links', async () => {
+    it('verify the wordplay section links', async () => {
         await modal.clickModalPlayBtn()
         await game.wordPlay.isDisplayed()
         await game.wordPlay.scrollIntoView()

@@ -14,7 +14,7 @@ describe('Verify All Print Buttons', async () => {
         await expect(browser).toHaveUrlContaining('crosswords')
     });
     
-    it('verify wordplay container', async () => {
+    it('verify printer button in feature Daily', async () => {
         await expect(hub.dailyPrinterBtn).toBeDisplayed()
         await hub.dailyPrinterBtn.click()
         await modal.newspaperRadioBtn.click()
@@ -26,7 +26,7 @@ describe('Verify All Print Buttons', async () => {
         await modal.printClosenBtn.click()
     })
 
-    it('verify wordplay container', async () => {
+    it('verify printer in  progress and seven days', async () => {
         await browser.pause(4000)
         await expect(hub.monthlyPrinter).toExist()
         await hub.allSevenPrinters()
@@ -34,7 +34,7 @@ describe('Verify All Print Buttons', async () => {
         await hub.allSevenPrinters()  
     })
         
-    it('verify wordplay container', async () => {
+    it('verify daily archive print option', async () => {
         await page.open("/archive")
 
         //today's Day

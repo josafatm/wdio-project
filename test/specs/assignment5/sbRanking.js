@@ -19,7 +19,7 @@ describe('Confirming Queen Bee Ranking', async () => {
         await expect(browser).toHaveUrlContaining("spelling-bee")
     })
 
-    it('reset and get a ranking ', async () => {
+    it('reset and get a ranking', async () => {
         await browser.pause(1000)
         await spellingBee.playBtn.click()
         await browser.pause(1000)
@@ -52,5 +52,4 @@ describe('Confirming Queen Bee Ranking', async () => {
         const ranks = await spellingBee.rankings.length
         chaiExpect(await ranks).to.equal(10)  
     })
-
 })
