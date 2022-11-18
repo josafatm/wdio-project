@@ -13,20 +13,12 @@ describe('Confirming Queen Bee Ranking', async () => {
     });
 
     it('go to spelling bee', async () => {
-        await nav.clickHamburgerBtn()
-        await browser.pause(1000)
-        await nav.spellingBee.click()
+        await nav.clickSpellingBee()
         await expect(browser).toHaveUrlContaining("spelling-bee")
     })
 
     it('reset and get a ranking', async () => {
-        await browser.pause(1000)
-        await spellingBee.playBtn.click()
-        await browser.pause(1000)
-
-        if(await spellingBee.title.isDisplayed()){
-            await spellingBee.closeBtn.click()
-        }
+        await spellingBee.pressPlayBtn()
         await spellingBee.resetAndGetRanking() 
         await spellingBee.closeBtn.click()
         await spellingBee.clickRankingBtn()
@@ -34,20 +26,17 @@ describe('Confirming Queen Bee Ranking', async () => {
         const ranks = await spellingBee.rankings.length
         chaiExpect(await ranks).to.equal(9)  
         await spellingBee.rankingCloseBtn.click()
-        await browser.pause(1000)
     })
 
     it('get Queen Bee Ranking', async () => {
         await browser.pause(1000)
         await browser.keys("Enter")
-        await browser.pause(2000)
+        await browser.keys("Enter")
+        await browser.pause(1000)
         await spellingBee.closeBtn.click()
 
-        await browser.pause(1000)
-        await spellingBee.moreBtn.click()
-        await browser.pause(1000)
-        await spellingBee.rankingsBtn.click()
-        await browser.pause(1000)
+        await spellingBee.clickRankingBtn()
+
 
         const ranks = await spellingBee.rankings.length
         chaiExpect(await ranks).to.equal(10)  

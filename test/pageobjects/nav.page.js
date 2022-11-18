@@ -27,6 +27,24 @@ class nav {
         await this.leaderboards.waitForClickable()
         await this.leaderboards.click()
     }
+
+    async clickSpellingBee(){
+        await this.clickHamburgerBtn()
+        await browser.pause(1000)
+        await this.spellingBee.waitForClickable()
+        await this.spellingBee.click()
+
+    }
+    async clickLetterboxed(){
+        await this.clickHamburgerBtn()
+        await browser.pause(1000)
+        await this.letterBoxed.waitForClickable()
+        await this.letterBoxed.click()
+
+    }
+
+
+
     /**
      * to click every game in the nav
      */

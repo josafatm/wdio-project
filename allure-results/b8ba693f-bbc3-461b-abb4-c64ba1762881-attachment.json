@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n            let l = window.gameData.today.outerLetters.slice(\"\")\n            return l.join(\"\")\n       \n        }).apply(null, arguments)",
+  "args": []
+}

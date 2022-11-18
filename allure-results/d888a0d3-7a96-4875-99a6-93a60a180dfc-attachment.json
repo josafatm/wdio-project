@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n            return window.gameData.dictionary[1]\n          }).apply(null, arguments)",
+  "args": []
+}

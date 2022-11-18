@@ -10,6 +10,14 @@ class gamePage {
     get wordleOverlayPagePlayBtn() { return $("button[class='Welcome-module_button__tEJl9']") }
     get wordleCloseBtn() { return $("button[aria-label='Close']") }
     get wordleSettingsBtn() { return $("#settings-button") }
+    get wordleHardModeBtn() { return $("button[aria-label='hardMode']") }
+    get wordleToaster() { return $("div[class='Toast-module_toast__Woeb- Toast-module_fade__uPhAg']") }
+    
+
+    
+
+
+
 
     get wordleHighContrastBtn() { return $("button[aria-label='colorblindMode'] span[class='Switch-module_knob__oRTpP']") }
 
@@ -40,24 +48,13 @@ class gamePage {
     get cells() { return $$("g[data-group='cells'] g[class='xwd__cell'] [class='xwd__cell--cell xwd__cell--nested']") }
 
 
-        get cells() { return $$("g[data-group='cells'] g[class='xwd__cell'] [class='xwd__cell--cell xwd__cell--nested']") }
-
-
     
 
 
     get keyboardBtns() { return $$(`div[class="Keyboard-module_keyboard__1HSnn"] button`) }
 
 
-    //div[class="Keyboard-module_keyboard__1HSnn"] button
-
-    ///button[data-key=${/[a-z]/g}]
-    // get container() { return $("div[class*='App-module_game']") }
-    // get body() { return $("body") }
-    // get statsButton() { return $("button#statistics-button") }
-    // get helpButton() { return $("#help-button")}
-
-
+  
    
     async clickPage() { this.container.click()}
     async clickBody() {browser.waitAndClick(this.container)}
@@ -70,6 +67,37 @@ class gamePage {
     }
 
     async clickBody() {browser.waitAndClick(this.container)}
+
+    async clickHardModeBtn() {
+        await browser.pause(1000)
+        await this.wordleSettingsBtn.click()
+        await this.wordleHardModeBtn.click()
+        await this.wordleCloseBtn.click()
+        await browser.pause(1500)
+
+    }
+
+    async enterWord() {
+        await browser.keys('great')
+        await browser.keys('Enter')
+    }
+
+
+    async toggleHardModeEnterWord() {
+        await this.clickHardModeBtn()
+        await this.enterWord()
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 }
 module.exports = new gamePage();

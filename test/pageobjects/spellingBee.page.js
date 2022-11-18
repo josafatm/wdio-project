@@ -21,6 +21,36 @@ class spellingBeePage {
     get rankings() { return $$("div[id='portal-game-modals'] li span") }
     get rankingCloseBtn() { return $("div[class='sb-modal-close']") }
 
+    get weekdays() { return $$('.sb-stats-bar__weekday') }
+    get errorMessage() { return $('div[class="sb-message-box error-message"] span') }
+    get successMessage() { return $('div[class="sb-message-box success-message"] span') }
+    get pangramMessage() { return $('div span[ class="sb-message"]') }
+    get statsBtn() { return $('span[class="pz-toolbar-button pz-toolbar-button__stats"]') }
+    get statisticsTitle() { return $('.sb-modal-title') }
+
+
+    
+
+
+    async verifyArchiveTabs() {
+        const days = await this.weekdays;
+        for (const day of days) {
+            await day.waitForClickable()
+            await day.moveTo()
+        }
+    }
+    
+    
+
+
+
+
+
+
+
+
+
+
     async resetBoard(){
         await browser.pause(500)
         this.northCell.click()
@@ -51,6 +81,10 @@ class spellingBeePage {
         await browser.keys("Enter")
         await browser.pause(1000)
         await browser.keys("Enter")
+        await browser.pause(1000)
+        await browser.keys("Enter")
+        await browser.pause(1000)
+
     }
 
     async resetAndGetRanking(){
@@ -67,5 +101,18 @@ class spellingBeePage {
         await this.rankingsBtn.click()
         await browser.pause(1000)
     }
+
+    async pressPlayBtn(){
+        await browser.pause(1000)
+        await this.playBtn.click()
+        await browser.pause(1500)
+        if(await this.title.isDisplayed()){
+            await this.closeBtn.click()
+        }
+    }
+
+
+
+
 }
 module.exports = new spellingBeePage();

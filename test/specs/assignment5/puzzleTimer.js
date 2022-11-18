@@ -19,6 +19,8 @@ describe('Pausing Timer', async () => {
         const handles = await browser.getWindowHandles()
         await browser.switchToWindow(handles[0])
         await toolbar.pauseBtn.click()
+        await browser.pause(5000)
+        await toolbar.pauseBtn.click()
         await expect(modal.continueBtn).toBeDisplayed()
         await modal.continueBtn.click()
     })

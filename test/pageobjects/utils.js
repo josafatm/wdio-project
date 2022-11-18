@@ -59,5 +59,175 @@ class utils {
 
 
 
+
+
+
+
+
+
+
+
+
+
+    async getGameDataAnswers() {
+        return browser.execute(() => {
+            return window.gameData.today.answers
+          })
+    }
+    async getSpellingBeeLettersOptions() {
+        return browser.execute(() => {
+            return window.gameData.today.validLetters
+          })
+    }
+
+
+    async getLetters() {
+        return browser.execute(() => {
+            let l = window.gameData.today.validLetters.slice(0,3)
+            return l.join("")
+
+          })
+    }
+
+
+    async getAllLetters() {
+        return browser.execute(() => {
+            let l = window.gameData.today.validLetters.slice("")
+            return l.join("")
+       
+        })
+
+    }
+
+    async getOuterLetters() {
+        return browser.execute(() => {
+            let l = window.gameData.today.outerLetters.slice("")
+            return l.join("")
+       
+        })
+    }
+
+    async getCenterLetter() {
+        return browser.execute(() => {
+            let l = window.gameData.today.centerLetter.toString()
+            return l.repeat(20)  
+       
+        })
+    }
+
+
+    
+
+
+
+    async getListOfWords() {
+        return browser.execute(() => {
+            let w = window.gameData.today.answers
+            return w.sort(function(a, b){
+                return a.length - b.length;
+            });
+          })
+    }
+
+
+
+    async getPangramWord() {
+        return browser.execute(() => {
+            let w = window.gameData.today.pangrams
+            return w.sort(function(a, b){
+                return a.length - b.length;
+            });
+          })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    async getFiveLetterWord() {
+        return browser.execute(() => {
+            let words = window.gameData.today.answers
+            return words.filter(arr => arr.length >= 5);
+          })
+    }
+
+
+
+
+
+    async getSevenLetterWord() {
+        let wordlist = await browser.execute(() => {
+            return wordlist = window.gameData.today.answers
+        })
+        const pangram = await browser.execute(() => {
+            return pangram = window.gameData.today.pangrams
+        })
+
+        for(let i =0; i < wordlist.length; i++) {
+            for(let j =0; j < pangram.length; j++){
+                if(wordlist[i] === pangram[j]){
+                    wordlist.splice(i,1)
+                }
+            }
+        }
+        return wordlist.filter(arr => arr.length >= 7);
+    }
+
+
+
+
+
+    
+
+
+
+    async getwordWithNoPangram() {
+        let wordlist = await browser.execute(() => {
+            return wordlist = window.gameData.today.answers
+        })
+        const pangram = await browser.execute(() => {
+            return pangram = window.gameData.today.pangrams
+        })
+
+        for(let i =0; i < wordlist.length; i++) {
+            for(let j =0; j < pangram.length; j++){
+                if(wordlist[i] === pangram[j]){
+                    wordlist.splice(i,1)
+                }
+            }
+        }
+        return wordlist
+    }
+
+
+
+
+
+
+
+    async clearLocalStorage() {
+        return browser.execute(() => {
+             window.reset()
+          })
+    }
+
+
+
+
 }
 module.exports = new utils();
+
+
+
+

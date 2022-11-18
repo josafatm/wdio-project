@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div[class=\"lb-message-box error-message\"] span"
+}

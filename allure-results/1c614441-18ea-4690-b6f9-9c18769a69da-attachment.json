@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n            return pangram = window.gameData.today.pangrams\n        }).apply(null, arguments)",
+  "args": []
+}
