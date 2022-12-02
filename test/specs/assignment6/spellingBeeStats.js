@@ -4,7 +4,7 @@ const spellingBee = require('../../pageobjects/spellingBee.page');
 const user = require('../../pageobjects/login.page');
 const utils = require('../../pageobjects/utils');
 
-xdescribe('Confirming Word Validation', async () => {
+describe('Confirming Word Validation', async () => {
     before(async () => {
         await user.login()
         await page.open("")
@@ -36,7 +36,9 @@ xdescribe('Confirming Word Validation', async () => {
         await browser.keys("Enter")
         await browser.pause(1000)
         //await expect(spellingBee.errorMessage).toHaveText('Already found')
-
     })
 
 })
+
+
+

@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div[class='pz-moment__button-wrapper slide-up'] button[type='button']"
+}

@@ -3,7 +3,7 @@ const user = require('../../pageobjects/login.page');
 const utils = require('../../pageobjects/utils');
 const util  = require('../../pageobjects/utils');
 
-describe('Hard Mode in wordle', async () => {
+xdescribe('Hard Mode in wordle', async () => {
     before(async () => {
         await user.login()
         await browser.url("https://www.nytimes.com/games/wordle/index.html")
@@ -12,13 +12,14 @@ describe('Hard Mode in wordle', async () => {
 
     it('enter Wordle', async () => {
         if ((await game.wordleOverlayPageText).isDisplayed()){
-                (await game.wordleOverlayPagePlayBtn).click()
-            }
+            (await game.wordleOverlayPagePlayBtn).click()
+        }
         await game.wordleCloseBtn.isDisplayed()
         await game.wordleCloseBtn.click()
     })
 
-    it('verify colorblind option', async () => {
+    it('verify hardmode option', async () => {
+        await browser.pause(1000)
         await game.toggleHardModeEnterWord()
         await game.toggleHardModeEnterWord()
         await game.clickHardModeBtn()

@@ -1,4 +1,0 @@
-{
-  "script": "return (() => {\n            let words = window.gameData.today.answers\n            return words.filter(arr => arr.length >= 5);\n          }).apply(null, arguments)",
-  "args": []
-}

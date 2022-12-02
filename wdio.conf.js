@@ -26,8 +26,19 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js'
-        './test/specs/assignment6/**.js'
+        './test/specs/assignment7/**.js'
+
+
         
+        // './test/specs/assignment7/anonWelcomeModal.js',
+        // './test/specs/assignment7/differentLoginUsers.js',
+        // './test/specs/assignment7/gameplayButtons.js',
+        // './test/specs/assignment7/howToPlayDropdown.js',
+        // './test/specs/assignment7/howToPlayModal.js',
+        // './test/specs/assignment7/sbStatistics.js',
+        // './test/specs/assignment7/spellingBeeButton.js',
+        // './test/specs/assignment7/statsLayout.js',
+        // './test/specs/assignment7/todaysHints.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -62,12 +73,20 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName: 'chrome', 
         'goog:chromeOptions': {
             // to run chrome headless the following flags are required
             // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
-            // args: ['--headless', '--disable-gpu'],
+            //args: ['--headless', '--disable-gpu'],
+            // args: ['--enable-automation'],
+            // excludeSwitches: ['enable-automation']
+
+
+
+
+        
         },
+        
         acceptInsecureCerts: true
         // If outputDir is provided WebdriverIO can capture driver session logs
         // it is possible to configure which logTypes to include/exclude.
@@ -222,8 +241,42 @@ exports.config = {
      * @param {String} commandName hook command name
      * @param {Array} args arguments that command would receive
      */
-    // beforeCommand: function (commandName, args) {
-    // },
+    beforeCommand: function (commandName, args) {
+
+        //Wait And Click
+        browser.addCommand("waitAndClick", async function () {
+
+            let tag = await this.getComputedLabel()
+            await this.waitForClickable({timeoutMsg: `could not click ${tag} button`} )
+            let btnText = await this.getText()
+            await this.click()
+            console.log(`${btnText} button is clicked`)
+        }, true)
+
+
+        //Set Text
+        browser.addCommand("writeText", async function (text) {
+            await this.waitForDisplayed()
+            await this.setValue(text)
+        }, true)
+   
+
+
+
+
+        // //Wait And Click
+        // browser.addCommand("waitAndClick", async function () {
+        //     await this.waitForClickable({timeoutMsg: "could not click button"} )
+        //     let btnText = await this.getText()
+        //     await this.click()
+        //     console.log(`${btnText} button is clicked`)
+        // }, true)
+
+
+    },
+
+
+
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details

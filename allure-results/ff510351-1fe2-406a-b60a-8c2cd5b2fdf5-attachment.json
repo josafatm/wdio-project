@@ -1,4 +1,0 @@
-{
-  "script": "return (() => {\n            let w = window.gameData.today.answers\n            return w.sort(function(a, b){\n                return a.length - b.length;\n            });\n          }).apply(null, arguments)",
-  "args": []
-}

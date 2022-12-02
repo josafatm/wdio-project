@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2)"
-}

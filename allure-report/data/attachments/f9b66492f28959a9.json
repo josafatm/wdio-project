@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "button[type='button'] span[class='pz-dropdown__label']"
-}

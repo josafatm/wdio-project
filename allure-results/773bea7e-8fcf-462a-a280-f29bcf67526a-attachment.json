@@ -1,0 +1,4 @@
+{
+  "script": "return (() => {\n             window.reset()\n          }).apply(null, arguments)",
+  "args": []
+}

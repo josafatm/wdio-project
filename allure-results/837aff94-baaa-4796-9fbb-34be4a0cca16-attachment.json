@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div[class=\"sb-message-box success-message\"] span"
-}

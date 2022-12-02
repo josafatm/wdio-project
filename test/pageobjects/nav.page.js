@@ -2,6 +2,7 @@ const game = require('../pageobjects/game.page')
 
 class nav {
     get loginBtn() { return $("div[id='js-nav-actions'] a[class='pz-nav__button white js-nav-login']") }
+    get logoutBtn() { return $(".pz-nav__button.gray.js-nav-logout") }
     get hamburgerBtn() { return $(".pz-nav__hamburger-box") }
     get leaderboards() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/leaderboards']") }
     get archive() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/crosswords/archive']") }
@@ -10,6 +11,11 @@ class nav {
     get allNavItems() { return $$("a[class='js-nav-tracker pz-nav-drawer__link']") }
     get letterBoxed() { return $("div[data-testid='letter-boxed']") }
     get spellingBee() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/puzzles/spelling-bee']") }
+
+
+    get wordleNav() { return $(".js-nav-tracker.pz-nav-drawer__link[href='/games/wordle/index.html']") }
+
+
 
 
     

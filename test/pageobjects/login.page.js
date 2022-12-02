@@ -8,10 +8,35 @@ class user {
     get continueBtn(){return $("[data-testid='submit-email']")}
     get signinBtn(){return $("[data-testid='login-button']")}
     get registerBtn(){return $("[data-testid='register-button']")}
+
+    get fbBtn(){return $("#js-facebook-oauth-login")}
+    get fbPasswordInputBox(){return $("#pass")}
+    get fbsigninBtn(){return $("input[type='submit']")}
+
+
+    get googleBtn(){return $("#js-google-oauth-login")}
+    get googleUsernameInputBox(){return $("input[type='email']")}
+    get googlePasswordInputBox(){return $("input[type='password']")}
+    get googleNextBtn(){return $("button[class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 qIypjc TrZEUc lw1w4b']")}
+
+
+
+
+    
+
+
+
+
+
+
+
+    
     /**
      * To delete cookie
      */
-    async delCookie() { await browser.deleteCookies('NYT-S'); }
+    async delCookie() { 
+        await browser.deleteCookies(["NYT-S"])
+     }
     /**
      * To set cookie
      */
@@ -35,6 +60,31 @@ class user {
         await this.delCookie();
         await this.setCookie();
     } 
+
+    async facebookSignin(username,password) {
+        await this.usernameInputBox.waitForDisplayed()
+        await this.usernameInputBox.setValue(username)
+        await this.fbPasswordInputBox.waitForDisplayed()
+        await this.fbPasswordInputBox.setValue(password)
+        await this.fbsigninBtn.click()
+    } 
+
+
+    async googleSignin(username,password) {
+        await this.googleUsernameInputBox.waitForDisplayed()
+        await this.googleUsernameInputBox.setValue(username)
+        await browser.pause(3000)
+        await this.googleNextBtn.click()
+        
+        await this.googlePasswordInputBox.waitForDisplayed()
+        await this.googlePasswordInputBox.setValue(password)
+        await this.googleNextBtn.click()
+    } 
+
+
+
+    
+
     /**
      * To set the username
      * @param {*} username 
@@ -49,7 +99,7 @@ class user {
      * @param {*} password 
      */
     async setPassword(password){
-        await this.usernameInputBox.waitForDisplayed()
+        await this.passwordInputBox.waitForDisplayed()
         await this.passwordInputBox.setValue(password)
     }
     /**
@@ -139,5 +189,11 @@ class user {
         // }
         await this.createNewAccount(username,password);
     }
+
+
+
+
+
+
 }
 module.exports = new user();

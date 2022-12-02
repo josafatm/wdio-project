@@ -1,3 +1,5 @@
+const { wordle } = require("./nav.page")
+
 class spellingBeePage {
     
     get playBtn() { return $("div[class='pz-moment__button-wrapper slide-up'] button[type='button']") }
@@ -16,8 +18,34 @@ class spellingBeePage {
     get inputField() { return $(".sb-hive-input-content") }
     get inputCursor() { return $(".sb-hive-input-content") }
 
+
+
     get moreBtn() { return $("button[type='button'] span[class='pz-dropdown__label']") }
     get rankingsBtn() { return $("li:nth-child(2) button:nth-child(1)") }
+    get howToPlayBtn() { return $("li:nth-child(1) button:nth-child(1)") }
+    get thisArticleLink() { return $("a[href='https://www.nytimes.com/2021/12/09/crosswords/spellingbee-tips.html']") }
+    get buzzwordsLink() { return $("p:nth-child(6) > a:nth-child(1)") }
+
+    get todayHintsBtn() { return $(".pz-toolbar-button.pz-toolbar-button__hints") }
+
+    
+    get toggleStatsRanking() { return $("div[class='pz-toggle__option']") }
+    get selectedStatRank() { return $(".pz-toggle__option.selected") }
+
+    
+
+
+    get welcomebackText() { return $(".pz-moment__title.large.slide-up") }
+
+
+    
+    
+
+
+
+
+
+
     get rankings() { return $$("div[id='portal-game-modals'] li span") }
     get rankingCloseBtn() { return $("div[class='sb-modal-close']") }
 
@@ -29,6 +57,19 @@ class spellingBeePage {
     get statisticsTitle() { return $('.sb-modal-title') }
 
 
+    get hiveInputAmount() { return $$('div:nth-child(1) > div:nth-child(2) > span:nth-child(1) span') }
+
+
+
+    get deleteBtn() { return $('.hive-action.hive-action__delete.sb-touch-button') }
+    get shuffleBtn() { return $('.hive-action.hive-action__shuffle.sb-touch-button') }
+    get EnterBtn() { return $('.hive-action.hive-action__delete.sb-touch-button') }
+
+
+    get shuffledWords() { return $$('div[class="hive"] svg[class="hive-cell outer"] text[class="cell-letter"] ') }
+
+    
+    
     
 
 
@@ -43,6 +84,20 @@ class spellingBeePage {
     
 
 
+
+    async getShuffledWords() {
+        const words = await this.shuffledWords;
+        let wording = ''
+        for (const word of words) {
+            let letter = await word.getText()
+            wording = wording+letter
+            await word.moveTo()
+        }
+        console.log(`This is the word:  ${wording}`)
+        return wording
+    }
+    
+    
 
 
 

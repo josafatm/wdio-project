@@ -1,7 +1,29 @@
+const axios = require('axios')
+
+
 class utils {
     /**
     * * to go back and refresh the page
     */
+    async enterWordleAnswer() {
+        const date = new Date()
+        const formattedDate = date.toLocaleDateString('en-CA')
+        const solutionResponse = await axios.get(
+          `https://www.stg.nytimes.com/svc/wordle/v2/${formattedDate}.json`,
+        )
+        //solution word
+        let solution = solutionResponse.data.solution
+
+        for (let i = 0; i < solution.length; i += 1) {
+            await browser.pause(500)
+            await browser.keys(solution[i])
+            await browser.pause(500)
+        }
+        await browser.keys('Enter')
+      
+    }
+
+
     async goBackAndRefresh() {
         await browser.pause(1000)
         await browser.back()

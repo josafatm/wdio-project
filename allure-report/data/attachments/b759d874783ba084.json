@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div[class='hideOn phone smallDevice'] section div div[class='print']"
-}

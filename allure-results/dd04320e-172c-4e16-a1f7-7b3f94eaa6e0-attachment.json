@@ -1,4 +1,0 @@
-{
-  "script": "return (() => {\n            let words = window.gameData.sides\n            let firstLetters = words.map((word) => word[0]).join('')\n            return firstLetters + firstLetters[0]\n          }).apply(null, arguments)",
-  "args": []
-}

@@ -1,0 +1,89 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1670004474630' stop='1670004477384'>
+    <name>Verify stats toggle</name>
+    <title>Verify stats toggle</title>
+    <test-cases>
+        <test-case start='1670004474631' status='broken' stop='1670004477383'>
+            <name>"before all" hook for Verify stats toggle</name>
+            <title>"before all" hook for Verify stats toggle</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-7'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome-107.0.5304.121'/>
+            </parameters>
+            <steps>
+                <step start='1670004474633' status='passed' stop='1670004476925'>
+                    <name>POST /session/:sessionId/url</name>
+                    <title>POST /session/:sessionId/url</title>
+                    <attachments>
+                        <attachment title='Request' source='8336443e-76a0-4abc-be4e-465efd782b98-attachment.json' type='application/json' size='50'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670004476926' status='passed' stop='1670004476939'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='9b1b6cbf-7333-48dc-9d60-555795382da1-attachment.json' type='application/json' size='113'/>
+                        <attachment title='Response' source='55b78235-9782-4d01-8d7b-0357d5198b5b-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670004476946' status='passed' stop='1670004476956'>
+                    <name>POST /session/:sessionId/execute/sync</name>
+                    <title>POST /session/:sessionId/execute/sync</title>
+                    <attachments>
+                        <attachment title='Request' source='fc3c6461-b44d-49a9-b452-f3ffb7b79256-attachment.json' type='application/json' size='8331'/>
+                        <attachment title='Response' source='45cc1354-0c70-4dd1-ad44-dd2208ff9696-attachment.json' type='application/json' size='4'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670004476957' status='passed' stop='1670004476966'>
+                    <name>POST /session/:sessionId/element</name>
+                    <title>POST /session/:sessionId/element</title>
+                    <attachments>
+                        <attachment title='Request' source='a2704472-4d8a-4435-acbe-672f4ee232a0-attachment.json' type='application/json' size='113'/>
+                        <attachment title='Response' source='49ede6d3-4361-49f2-9cdb-3d0684338846-attachment.json' type='application/json' size='83'/>
+                    </attachments>
+                    <steps/>
+                </step>
+                <step start='1670004476969' status='broken' stop='1670004477383'>
+                    <name>POST /session/:sessionId/element/9678f05c-3ef1-4429-b368-2e048a8d8ac5/click</name>
+                    <title>POST /session/:sessionId/element/9678f05c-3ef1-4429-b368-2e048a8d8ac5/click</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1670004477379' status='broken' stop='1670004477383'>
+                            <name>DELETE /session/:sessionId</name>
+                            <title>DELETE /session/:sessionId</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+            <failure>
+                <message>socket hang up</message>
+                <stack-trace>RequestError: socket hang up
+                    at ClientRequest.&lt;anonymous> (/Users/josafatmelendez/Desktop/wdio-poc/node_modules/got/dist/source/core/index.js:970:111)
+                    at Object.onceWrapper (node:events:628:26)
+                    at ClientRequest.emit (node:events:525:35)
+                    at ClientRequest.emit (node:domain:489:12)
+                    at origin.emit (/Users/josafatmelendez/Desktop/wdio-poc/node_modules/@szmarczak/http-timer/dist/source/index.js:43:20)
+                    at Socket.socketOnEnd (node:_http_client:518:9)
+                    at Socket.emit (node:events:525:35)
+                    at Socket.emit (node:domain:489:12)
+                    at endReadableNT (node:internal/streams/readable:1359:12)
+                    at connResetException (node:internal/errors:711:14)
+                    at Socket.socketOnEnd (node:_http_client:518:23)
+                    at Socket.emit (node:events:525:35)
+                    at Socket.emit (node:domain:489:12)
+                    at endReadableNT (node:internal/streams/readable:1359:12)
+                    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
