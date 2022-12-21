@@ -43,8 +43,18 @@ class hubPage {
 
      get inProgressBtn() { return $("div[class='pz-content'] button:nth-child(2) span") }
 
+
+     get myAverageTxt() { return $(".hub-stats-card__title:nth-child(1)") }
+     get streaksTxt() { return $("a:nth-child(1) > div:nth-child(3)") }
+     get moreStats() { return $(".hub-stats-card__more-stats") }
+
+
+
      
 
+     
+
+     
 
      //
 

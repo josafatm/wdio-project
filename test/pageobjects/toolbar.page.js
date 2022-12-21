@@ -13,6 +13,9 @@ class toolBar  {
     get resetBtn() { return $("button[aria-label='Reset']") }
     get pauseBtn() { return $(".pz-icon.pz-icon-pause") }
 
+    get modalPlayBtn() { return $(".pz-moment__button") }
+
+
 
     
 
@@ -72,7 +75,10 @@ class toolBar  {
      * to select what type of reveal to use 
      */
     async revealDropdown(option) {
-        await modal.clickModalPlayBtn()
+        // if ((await this.modalPlayBtn).isExisting()){
+        //     await this.modalPlayBtn.waitAndClick()
+        // }
+
         await this.toolbarRevealBtn.click()
         if(option === "square"){
             await this.revealSquareBtn.click()

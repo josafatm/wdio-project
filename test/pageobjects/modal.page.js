@@ -12,6 +12,15 @@ class modal  {
      /*clear puzzle*/
      get startOverBtn() { return $("button[aria-label='Start over']") }
 
+
+     get createAccountbtn() { return $("button[aria-label='Create a free account']") }
+     get playWithoutAccountLink() { return $("button[class='xwd__modal--subtle-button']") }
+
+
+
+     
+
+
      /*congrats*/
      get closeBtn() { return $(".pz-icon.pz-icon-close") }
      get viewAllGamesBtn() { return $("button[aria-label='View all games']") }

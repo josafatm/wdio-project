@@ -2,6 +2,7 @@ const game = require('../../pageobjects/game.page');
 const user = require('../../pageobjects/login.page');
 const util  = require('../../pageobjects/utils');
 const nav = require('../../pageobjects/nav.page');
+const utils = require('../../pageobjects/utils');
 
 describe('Anon Welcome Modal', async () => {
     before(async () => {
@@ -33,4 +34,17 @@ describe('Anon Welcome Modal', async () => {
         await nav.wordleNav.waitAndClick()
         await expect(game.attemptThreeOutOfSix).toHaveText("Youʼre on attempt 3 out of 6. Keep it up!")
     })
+
+
+
+    it('Verift attempt 3 out of 6', async () => {
+        let outerLetters = await utils.getOuterLetters()
+
+
+
+    })
+
+
+
+
 })

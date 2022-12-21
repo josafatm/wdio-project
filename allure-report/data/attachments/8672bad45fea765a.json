@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div[aria-label='Row 3'] div:nth-child(1) div:nth-child(1)"
-}

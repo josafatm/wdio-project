@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "p:nth-child(6) > a:nth-child(1)"
-}

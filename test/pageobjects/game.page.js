@@ -36,7 +36,7 @@ class gamePage {
     get statContainer() { return $(`.Stats-module_gameStats__ZP1aW.Stats-module_testGameStats__ourh0`)}
 
     
-    
+    get errorPage() { return $(`div[class='pz-error__message'] h1`)}
 
     
 

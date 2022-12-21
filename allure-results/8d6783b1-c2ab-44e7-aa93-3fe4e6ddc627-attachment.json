@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "div[class='hub-welcome__section mini'] div div[role='button'] div[class='cardRibbon']"
+}

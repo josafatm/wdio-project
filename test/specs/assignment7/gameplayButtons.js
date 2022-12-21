@@ -42,4 +42,11 @@ describe('Confirming Word Validation', async () => {
         let secondShuffle = await spellingBee.getShuffledWords()
         chaiExpect(firstShuffle).not.to.equal(secondShuffle);
     })
+
+    //grab all Letters 
+    //put in array
+    //click a particle letter 
+
+    
+
 })

@@ -1,4 +1,0 @@
-{
-  "using": "css selector",
-  "value": "div[id='js-nav-actions'] a[class='pz-nav__button white js-nav-login']"
-}

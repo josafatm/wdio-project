@@ -17,6 +17,13 @@ class archivePage {
     get listViewEnabled() { return $("div[class='archive_list-view']") }
 
 
+    get upsellBanner() { return $(".archive_upsell-title") }
+    get upsellSubscribeBtn() { return $(".archive_subscribe-button") }
+
+
+    
+    
+
 
     get printTool() { return $$("div[class='printTool']") }
 

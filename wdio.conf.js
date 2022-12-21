@@ -26,10 +26,10 @@ exports.config = {
     //
     specs: [
         //'./test/specs/**/*.js'
-        './test/specs/assignment7/**.js'
+        './test/specs/assignment8/**.js'
 
 
-        
+
         // './test/specs/assignment7/anonWelcomeModal.js',
         // './test/specs/assignment7/differentLoginUsers.js',
         // './test/specs/assignment7/gameplayButtons.js',

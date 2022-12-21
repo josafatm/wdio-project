@@ -125,9 +125,18 @@ class utils {
         return browser.execute(() => {
             let l = window.gameData.today.outerLetters.slice("")
             return l.join("")
-       
         })
     }
+
+
+
+
+    async getElementInLetters(letter) {
+        let outerLetters = await utils.getOuterLetters()
+        return outerLetters.indexOf(letter)
+    }
+
+
 
     async getCenterLetter() {
         return browser.execute(() => {

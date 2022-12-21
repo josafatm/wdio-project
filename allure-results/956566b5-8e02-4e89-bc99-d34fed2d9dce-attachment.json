@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": ".hub-stats-card__title:nth-child(1)"
+}

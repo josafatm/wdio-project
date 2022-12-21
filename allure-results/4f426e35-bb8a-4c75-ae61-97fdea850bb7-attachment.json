@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "button[aria-label='Create a free account']"
+}

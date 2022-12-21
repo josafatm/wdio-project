@@ -1,0 +1,4 @@
+{
+  "using": "css selector",
+  "value": "span[class=\"pz-toolbar-button pz-toolbar-button__stats\"]"
+}
